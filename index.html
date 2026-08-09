@@ -29,21 +29,64 @@ section{padding:80px 0}.kicker{font:12px ui-monospace,monospace;color:var(--gree
 footer{border-top:1px solid var(--line);padding:28px 0;color:#667c83;font:12px ui-monospace,monospace}
 @media(max-width:850px){.grid,.certs{grid-template-columns:1fr 1fr}.projects,.learning,.contact{grid-template-columns:1fr}.links{display:none}.terminal{padding:28px}}
 @media(max-width:560px){.grid,.certs{grid-template-columns:1fr}.hero{padding-top:35px}.terminal{padding:22px}section{padding:55px 0}h1{font-size:60px}}
+
+.hero-layout{display:grid;grid-template-columns:minmax(280px,430px) 1fr;gap:28px;align-items:center}
+.profile-photo{border:1px solid #2a6070;border-radius:22px;padding:7px;background:linear-gradient(145deg,#0c141b,#07090d);box-shadow:0 0 55px rgba(168,121,255,.12),0 0 35px rgba(0,245,255,.08)}
+.profile-photo img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:16px}
+.social-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.social-row a{display:inline-flex;align-items:center;gap:7px;padding:9px 12px;border:1px solid #234b55;border-radius:10px;background:#071015;color:#c5d8dd;font-size:12px;font-weight:800}
+.social-row a:hover{color:var(--cyan);border-color:var(--cyan)}
+@media(max-width:850px){.hero-layout{grid-template-columns:1fr}.profile-photo{max-width:420px;margin:auto}}
+
+.social-3d{display:flex;flex-wrap:wrap;gap:13px;margin-top:24px;perspective:900px}.social3d{position:relative;display:flex;align-items:center;gap:9px;padding:7px 12px 7px 7px;border:1px solid #254a54;border-radius:15px;background:linear-gradient(145deg,#111c24,#060a0f);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 10px 24px rgba(0,0,0,.28);transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.social3d:hover{transform:translateY(-6px) rotateX(7deg) rotateY(-7deg) scale(1.03);box-shadow:0 18px 35px rgba(0,0,0,.42),0 0 22px rgba(0,245,255,.11);border-color:#3b7681}.social3d .orb{width:37px;height:37px;border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:950;font-family:Arial,sans-serif;font-size:14px;background:linear-gradient(145deg,#1c2731,#070a0e);box-shadow:inset 3px 3px 7px rgba(255,255,255,.12),inset -5px -5px 9px rgba(0,0,0,.7),0 6px 12px rgba(0,0,0,.35);transform:translateZ(14px);animation:floatSocial 3.5s ease-in-out infinite}.social3d:nth-child(2) .orb{animation-delay:.35s}.social3d:nth-child(3) .orb{animation-delay:.7s}.social3d:nth-child(4) .orb{animation-delay:1.05s}.social3d .brandmark{filter:drop-shadow(0 1px 3px rgba(255,255,255,.25))}.socialname{font-size:12px;font-weight:850;color:#c9d9de;transform:translateZ(9px)}.github .orb{border:1px solid #8ea4ad}.linkedin .orb{border:1px solid #16a9ff;background:linear-gradient(145deg,#0b72b6,#06243b)}.instagram .orb{border:1px solid #ff4fb3;background:linear-gradient(145deg,#7a1dce,#e32d72 60%,#ffb02e)}.facebook .orb{border:1px solid #4f91ff;background:linear-gradient(145deg,#1d63db,#092d75)}@keyframes floatSocial{0%,100%{transform:translateZ(14px) translateY(0)}50%{transform:translateZ(14px) translateY(-3px)}}
+@media(max-width:560px){.social-3d{gap:9px}.social3d{flex:1 1 calc(50% - 9px);justify-content:flex-start}.socialname{font-size:11px}}
+
+/* CYVEX ambient cyber background — intentionally subtle */
+.cy-bg{position:fixed;inset:0;z-index:-5;overflow:hidden;pointer-events:none;background:
+ radial-gradient(circle at 15% 18%,rgba(0,245,255,.07),transparent 24%),
+ radial-gradient(circle at 82% 26%,rgba(168,121,255,.08),transparent 26%),
+ radial-gradient(circle at 60% 85%,rgba(125,255,77,.035),transparent 22%),#05070a}
+.cy-grid{position:absolute;inset:-20%;opacity:.22;background-image:linear-gradient(rgba(0,245,255,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(168,121,255,.07) 1px,transparent 1px);background-size:55px 55px;transform:perspective(900px) rotateX(62deg) translateY(18%);transform-origin:center bottom;animation:gridDrift 18s linear infinite}
+.cy-vignette{position:absolute;inset:0;background:radial-gradient(circle at center,transparent 38%,rgba(0,0,0,.48) 100%)}
+.cy-scan{position:absolute;left:0;right:0;height:2px;top:-5%;background:linear-gradient(90deg,transparent,rgba(0,245,255,.28),transparent);filter:blur(.4px);animation:scan 11s linear infinite;opacity:.5}
+.cy-orb{position:absolute;border-radius:50%;filter:blur(1px);opacity:.18;mix-blend-mode:screen}.orb-a{width:240px;height:240px;left:-70px;top:20%;background:radial-gradient(circle,rgba(0,245,255,.22),transparent 68%);animation:orbA 15s ease-in-out infinite}.orb-b{width:300px;height:300px;right:-110px;top:42%;background:radial-gradient(circle,rgba(168,121,255,.2),transparent 68%);animation:orbB 18s ease-in-out infinite}.orb-c{width:180px;height:180px;left:45%;bottom:-70px;background:radial-gradient(circle,rgba(125,255,77,.12),transparent 70%);animation:orbC 14s ease-in-out infinite}
+.cy-nodes{position:absolute;inset:0;opacity:.38}.node{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:nodePulse 3s ease-in-out infinite}.node:nth-child(1){left:8%;top:30%;animation-delay:.2s}.node:nth-child(2){left:20%;top:72%;animation-delay:1.1s}.node:nth-child(3){left:73%;top:16%;animation-delay:.6s}.node:nth-child(4){left:90%;top:64%;animation-delay:1.6s}.node:nth-child(5){left:58%;top:78%;animation-delay:2s}.node:nth-child(6){left:40%;top:10%;animation-delay:1.3s}
+.cy-lines{position:absolute;inset:0;opacity:.12;background:linear-gradient(125deg,transparent 0 13%,rgba(0,245,255,.35) 13.1%,transparent 13.25% 31%,rgba(168,121,255,.28) 31.1%,transparent 31.25% 63%,rgba(0,245,255,.22) 63.1%,transparent 63.25% 100%);background-size:900px 900px;animation:linesMove 22s linear infinite}
+.cy-code{position:absolute;inset:0;overflow:hidden;opacity:.08;font:11px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green);white-space:pre;animation:codeFlicker 5s ease-in-out infinite}
+@keyframes gridDrift{from{background-position:0 0;transform:perspective(900px) rotateX(62deg) translateY(18%)}to{background-position:0 110px;transform:perspective(900px) rotateX(62deg) translateY(24%)}}
+@keyframes scan{0%{top:-5%}100%{top:105%}}
+@keyframes orbA{50%{transform:translate(100px,-30px) scale(1.12)}}@keyframes orbB{50%{transform:translate(-80px,40px) scale(.9)}}@keyframes orbC{50%{transform:translate(45px,-30px) scale(1.18)}}
+@keyframes nodePulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:1;transform:scale(1.8)}}
+@keyframes linesMove{0%{background-position:0 0}100%{background-position:180px 120px}}
+@keyframes codeFlicker{0%,100%{opacity:.05}50%{opacity:.1}}
+@media(prefers-reduced-motion:reduce){.cy-grid,.cy-scan,.cy-orb,.cy-lines,.cy-code,.node{animation:none!important}}
 </style>
 </head>
-<body>
+<body><div class="cy-bg" aria-hidden="true"><div class="cy-grid"></div><div class="cy-lines"></div><div class="cy-scan"></div><div class="cy-orb orb-a"></div><div class="cy-orb orb-b"></div><div class="cy-orb orb-c"></div><div class="cy-nodes"><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i><i class="node"></i></div><div class="cy-code">0101  AI_SEC  0110  LLM  1001  RED_TEAM
+     1100  RAG  0011  AUTH  1010  CVE
+0110  PROMPT  1001  ZERO_TRUST  0101
+       1011  CYVEX  0010  DEFEND  1110</div><div class="cy-vignette"></div></div>
 <nav><div class="wrap navin"><a class="logo" href="#top">CY<span>VEX</span></a><div class="links"><a href="#about">ABOUT</a><a href="#skills">SKILLS</a><a href="#learning">LEARNING</a><a href="#projects">PROJECTS</a><a href="#certificates">CERTIFICATES</a><a href="#contact">CONTACT</a></div></div></nav>
 
 <main id="top">
 <div class="wrap hero">
-<div class="terminal">
+<div class="hero-layout"><div class="profile-photo"><img src="profile.png" alt="Thamizharasu N professional portrait"></div><div class="terminal">
 <h1>CYVEX</h1>
 <div class="tag">AI SECURITY ENGINEER · AI RED TEAMING · CYBERSECURITY</div>
 <div class="name"><strong>Thamizharasu N</strong> · B.E. CSE (Cyber Security) · NPR College of Engineering and Technology</div>
 <p>Cybersecurity student building toward AI Security and LLM Security — learning how to discover, evaluate and harden vulnerabilities in AI-powered applications.</p>
 <div class="chips"><span class="chip">AI SECURITY</span><span class="chip">LLM SECURITY</span><span class="chip">RED TEAMING</span><span class="chip">PYTHON</span><span class="chip">LINUX</span><span class="chip">WEB SECURITY</span></div>
-<div class="cta"><a class="btn primary" href="#projects">VIEW PROJECTS</a><a class="btn" href="#certificates">CERTIFICATES</a><a class="btn" href="mailto:thamizharasu000@gmail.com">EMAIL ME</a><button class="btn sharebtn" id="shareProfile" type="button" title="Share CYVEX profile" aria-label="Share CYVEX profile">↗ SHARE</button></div>
-</div></div>
+<div class="social-3d" aria-label="Social profiles">
+<a class="social3d github" href="https://github.com/thamizharasu000" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+<span class="orb"><span class="brandmark">GH</span></span><span class="socialname">GitHub</span></a>
+<a class="social3d linkedin" href="https://www.linkedin.com/in/thamizharasu-n-56b96138b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+<span class="orb"><span class="brandmark">in</span></span><span class="socialname">LinkedIn</span></a>
+<a class="social3d instagram" href="https://www.instagram.com/itx._.me._.tamizh/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+<span class="orb"><span class="brandmark">◎</span></span><span class="socialname">Instagram</span></a>
+<a class="social3d facebook" href="https://www.facebook.com/tamilarthi.tamilarthi.58/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+<span class="orb"><span class="brandmark">f</span></span><span class="socialname">Facebook</span></a>
+</div><div class="cta"><a class="btn primary" href="#projects">VIEW PROJECTS</a><a class="btn" href="#certificates">CERTIFICATES</a><a class="btn" href="mailto:thamizharasu000@gmail.com">EMAIL ME</a><button class="btn sharebtn" id="shareProfile" type="button" title="Share CYVEX profile" aria-label="Share CYVEX profile">↗ SHARE</button></div>
+</div></div></div>
 
 <section id="about"><div class="wrap"><h2 class="title">Building security skills for the AI era.</h2><div class="card"><p>I’m <b>Thamizharasu N</b>, a Cyber Security engineering student focused on developing practical skills in AI Security, LLM Security and AI Red Teaming. My learning path combines programming, networking, Linux, web security, ethical hacking, machine learning, generative AI, cloud security and DevSecOps.</p><p class="muted">This portfolio separates <b>learning</b> from <b>projects</b> and verified credentials so the profile stays honest while showing the direction I’m building toward.</p></div></div></section>
 
@@ -84,7 +127,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#667c83;font:12px u
 
 <section id="contact"><div class="wrap"><h2 class="title">Contact</h2><div class="contact">
 <div class="card"><h3>Direct</h3><a href="mailto:thamizharasu000@gmail.com">✉ thamizharasu000@gmail.com</a><a href="tel:+919092209635">☎ +91 90922 09635</a></div>
-<div class="card"><h3>Professional</h3><a href="https://www.linkedin.com/in/thamizharasu-n-56b96138b/" target="_blank" rel="noopener noreferrer">in LinkedIn ↗</a><a href="https://github.com/thamizharasu000" target="_blank" rel="noopener noreferrer">⌘ GitHub ↗</a></div>
+<div class="card"><h3>Social & Professional</h3><a href="https://www.linkedin.com/in/thamizharasu-n-56b96138b/" target="_blank" rel="noopener noreferrer">in LinkedIn ↗</a><a href="https://github.com/thamizharasu000" target="_blank" rel="noopener noreferrer">⌘ GitHub ↗</a></div>
 </div></div></section>
 </main>
 <footer><div class="wrap">CYVEX // THAMIZHARASU N · AI SECURITY / RED TEAMING / CYBERSECURITY · 2025</div></footer>
